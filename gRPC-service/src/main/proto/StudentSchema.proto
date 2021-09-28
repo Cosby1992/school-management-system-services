@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+
+package dk.cosby.si.cphbusiness.grpcstudentschemaservice;
+
+/*
+enum AverageGrade {
+  A = 0;
+  B = 1;
+  C = 2;
+  D = 3;
+  E = 4;
+  Fx = 5;
+  F = 6;
+}
+*/
+
+/*
+[
+	course_name
+	teacher_firstname
+	teacher_lastname
+	classroom_number
+]
+ */
+
+message Schema {
+  string courseName = 1;
+  string teacherFirstname = 2;
+  string teacherLastname= 3;
+  int32 classroomNumber = 4;
+}
+
+message GetSchemaRequest {
+  string studentId = 1;
+  //repeated string hobbies = 3;
+  //map<string, string> bagOfTricks = 4;
+  //AverageGrade averageGrade = 5;
+}
+
+message GetSchemaResponse {
+  repeated Schema classes = 1;
+}
+
+// 4. service, unary request/response
+service SchemaService {
+  rpc getSchema(GetSchemaRequest) returns (GetSchemaResponse);
+}
