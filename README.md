@@ -12,6 +12,7 @@ handling students is implemented.
 #### To run
 - Clone this repository
 - Navigate to ```src/main/java/dk/cosby/cph/si/studentmicroservice/StudentMicroserviceApplication.java``` in the rest-service module.
+- Install maven dependencies for this module
 - Run the class ```StudentMicroserviceApplication.java```
 
 #### To test
@@ -40,6 +41,7 @@ The gRPC service is responsible for providing schemas for students.
 #### To Run
 - Clone this repository
 - Navigate to ```src/main/java/dk/cosby/si/cphbusiness/grpcstudentschemaservice/server/StudentSchemaServer.java``` in the gRPC-service module.
+- Install maven dependencies for this module
 - Run the class ```StudentSchemaServer.java```
 
 #### To test
@@ -57,12 +59,19 @@ OR
 - Click add and try the methods available.
 
 ### SOAP Service
-The SOAP service is responsible for checking School books ISBN numbers to check that they are valid copies of the book. This service is for now only consumed, and therefore not available at a server, but it can still be tested locally (see [To Run and Test](####to-run-and-test))
+The SOAP service is responsible for checking School books ISBN numbers to check that they are valid copies of the book. This service is for now only consumed, and therefore not available at a server, but it can still be tested locally (see "To Run and Test" below)
 
 #### To run and Test
 - Clone this repository
 - Navigate to ```src/main/java/example/ISBNNumberClient.java``` in the SOAP-service module.
 - Run the class ```ISBNNumberClient.java```
+
+#### Troubleshoot
+- It might be nessesary to right-click on the SOAP-service module and select "add framework"
+- Then choose "Web services client"
+- Select version "Apache Axis" and make sure to select "Download"
+- Click next, you will be prompted for "URL" etc.. But there is no need for setting up a WSDL path, it's just because intelliJ seems to forget that the framework is already added to the module. 
+- Now just click cancel and continue from step three in "To run and Test"
 
 
 ### Participants
